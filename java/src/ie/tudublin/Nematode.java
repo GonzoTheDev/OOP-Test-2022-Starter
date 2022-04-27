@@ -5,7 +5,7 @@ import processing.data.*;
 public class Nematode {
 
     // Constructor method
-    public Nematode(String name, int length, int limbs, Gender gender)
+    public Nematode(String name, int length, int limbs, String gender)
     {
         this.name = name;
         this.length = length;
@@ -18,7 +18,7 @@ public class Nematode {
             tr.getString("name"), 
             tr.getInt("length"),
             tr.getInt("limbs"),
-            Gender.valueOf(tr.getString("gender"))
+            tr.getString("gender")
             );
     }
 
@@ -26,11 +26,7 @@ public class Nematode {
     private String name;
     private int length;
     private int limbs;
-    private Gender gender;
-
-    public enum Gender {
-        m, f, h, n
-    }
+    private String gender;
 
 
     // Get the name
@@ -64,12 +60,12 @@ public class Nematode {
     }
 
     // Get the gender
-    public Gender getGender() {
+    public String getGender() {
         return gender;
     }
 
     // Set the gender 
-    public void setGender(Gender gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
@@ -77,5 +73,5 @@ public class Nematode {
     public String toString(){
         return "Nematode " + name + ", length: " + length + ", limbs: " + limbs + ", gender: " + gender ;
     }
-    
+
 }
