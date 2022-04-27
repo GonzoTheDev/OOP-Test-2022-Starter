@@ -71,6 +71,7 @@ public class NematodeVisualiser extends PApplet
 		clear();
 		Nematode n = nematodes.get(option);
 		String Name = n.getName();
+		int ListSize = nematodes.size();
 		
 		textAlign(CENTER);
 		textSize(60);
@@ -88,8 +89,8 @@ public class NematodeVisualiser extends PApplet
 				} else {
 					y = (i * 50) + 100;
 				}
-				if(i == nematodes.size()-1){
-					if(n.getGender() == "m"){
+				if(i == n.getLength()-1){
+					if(new String(n.getGender()).equals("m")){
 						if(n.getLimbs() == 1){
 							stroke(colour, 255, 255);
 							line(x1, y, x2, y);
@@ -99,9 +100,11 @@ public class NematodeVisualiser extends PApplet
 							stroke(colour, 255, 255);
 							noFill();
 							circle(x, y, 50);
+							line(x, y+25, x, y+50);
+							circle(x, y+50, 10);
 						}
 					}
-					if(n.getGender() == "f"){
+					if(new String(n.getGender()).equals("f")){
 						if(n.getLimbs() == 1){
 							stroke(colour, 255, 255);
 							line(x1, y, x2, y);
@@ -111,9 +114,10 @@ public class NematodeVisualiser extends PApplet
 							stroke(colour, 255, 255);
 							noFill();
 							circle(x, y, 50);
+							circle(x, y, 30);
 						}
 					}
-					if(n.getGender() == "h"){
+					if(new String(n.getGender()).equals("h")){
 						if(n.getLimbs() == 1){
 							stroke(colour, 255, 255);
 							line(x1, y, x2, y);
@@ -123,9 +127,12 @@ public class NematodeVisualiser extends PApplet
 							stroke(colour, 255, 255);
 							noFill();
 							circle(x, y, 50);
+							circle(x, y, 30);
+							line(x, y+25, x, y+50);
+							circle(x, y+50, 10);
 						}
 					}
-					if(n.getGender() == "n"){
+					if(new String(n.getGender()).equals("n")){
 						if(n.getLimbs() == 1){
 							stroke(colour, 255, 255);
 							line(x1, y, x2, y);
