@@ -67,18 +67,88 @@ public class NematodeVisualiser extends PApplet
 
 	public void draw()
 	{
+		
+		clear();
 		Nematode n = nematodes.get(option);
+		String Name = n.getName();
+		
+		textAlign(CENTER);
+		textSize(60);
+		fill(255, 0, 255);
+		text(Name, 400, 50);
+
 		for (int i = 0; i < n.getLength(); i++){
 				int x = width / 2;
-				int y;
+				int y, x1, x2;
+				int colour = option * 20;
+				x1 = x - 50;
+				x2 = x + 50;
 				if( i == 0){
 					y = 100;
 				} else {
-					y = i * 50;
+					y = (i * 50) + 100;
 				}
-				stroke(255, 255, 255);
-				noFill();
-				circle(x, y, 50);
+				if(i == nematodes.size()-1){
+					if(n.getGender() == "m"){
+						if(n.getLimbs() == 1){
+							stroke(colour, 255, 255);
+							line(x1, y, x2, y);
+							fill(0, 0, 0);
+							circle(x, y, 50);
+						}else{
+							stroke(colour, 255, 255);
+							noFill();
+							circle(x, y, 50);
+						}
+					}
+					if(n.getGender() == "f"){
+						if(n.getLimbs() == 1){
+							stroke(colour, 255, 255);
+							line(x1, y, x2, y);
+							fill(0, 0, 0);
+							circle(x, y, 50);
+						}else{
+							stroke(colour, 255, 255);
+							noFill();
+							circle(x, y, 50);
+						}
+					}
+					if(n.getGender() == "h"){
+						if(n.getLimbs() == 1){
+							stroke(colour, 255, 255);
+							line(x1, y, x2, y);
+							fill(0, 0, 0);
+							circle(x, y, 50);
+						}else{
+							stroke(colour, 255, 255);
+							noFill();
+							circle(x, y, 50);
+						}
+					}
+					if(n.getGender() == "n"){
+						if(n.getLimbs() == 1){
+							stroke(colour, 255, 255);
+							line(x1, y, x2, y);
+							fill(0, 0, 0);
+							circle(x, y, 50);
+						}else{
+							stroke(colour, 255, 255);
+							noFill();
+							circle(x, y, 50);
+						}
+					}
+				}else{
+					if(n.getLimbs() == 1){
+						stroke(colour, 255, 255);
+						line(x1, y, x2, y);
+						fill(0, 0, 0);
+						circle(x, y, 50);
+					}else{
+						stroke(colour, 255, 255);
+						noFill();
+						circle(x, y, 50);
+					}
+				}
 			}
 		
 	}
